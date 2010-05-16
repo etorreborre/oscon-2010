@@ -3,7 +3,7 @@ package tour
 import org.specs._
 import IncredibleStringReverser._
 
-class Reverser2Spec extends Specification {
+class Reverser2Spec extends SpecificationWithJUnit {
   "a reversed empty string" should {
 	val reversed = reverse("")  
     "be empty" in {
