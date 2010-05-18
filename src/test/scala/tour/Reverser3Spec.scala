@@ -20,6 +20,7 @@ class Reverser3Spec extends SpecificationWithJUnit with ScalaCheck with Sugar {
     for { l <- Gen.listOfN(4, Gen.oneOf('a', 'b', 'c')) } yield l.mkString
   }
   "keep the same 'center' character - Woops!" verifies { s: String =>
-    s.isEmpty || (center(s.reverse) == center(s)) 
-  }.display(minTestsOk -> 5)
+  new Exception("").printStackTrace
+    s.isEmpty || (center(s.reverse) must_== center(s)) 
+  }
 }
