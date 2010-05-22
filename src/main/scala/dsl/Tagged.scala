@@ -2,7 +2,8 @@ package dsl
 
 trait TaggedSpecs {
   trait Tagged {
-    def tag(t: String): this.type = this
+	// store the tag and return this
+    def tag(t: String): this.type = this 
   }
   class Spec extends Tagged {
 	def include(other: Spec*): Spec = this
