@@ -1,6 +1,8 @@
 package dsl
 
-abstract class Matcher[-T] 
+trait Matcher[-T] {
+  def apply(y: =>T): (Boolean, String, String)
+} 
 class EqualMatcher[T](x: T) extends Matcher[T] { 
   def apply(y: =>T) = {
     val (a, b) = (x, y)
