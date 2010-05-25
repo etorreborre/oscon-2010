@@ -28,7 +28,7 @@ class ExtendedFunction[A, B](f: Function[A, B]) {
 	try {
 	  Some(f(a))
 	} catch {
-	  case e: MatchError => None
+	  case e: MatchError => if (e.getCause == null) None else throw e
 	}
   }
 }
@@ -47,7 +47,7 @@ class extendedFunctionSpec extends SpecificationWithJUnit {
 	}  
 	"rethrowing a match error if it isn't part of the function definition" in {
       val f2: Function[Int, String] = { case a => a match { case x if x > 0 => x.toString } }
-	  f2.apply(0) must throwA[MatchError]
+	  f2.applySafely(0) must throwA[MatchError]
 	}  
   }
   "a method can accept a function or a partial function" >> {
