@@ -1,0 +1,10 @@
+This project contains the resources for my OSCON 2010 talk: "specs and Scala, tips and tricks for a friendly DSL".
+
+The slides are accessible here: 
+
+ http://github.com/etorreborre/oscon-2010/tree/master/src/main/resources/oscon_2010_specs.pptx
+
+and there are a few code snippets used to prepare the slides here:
+
+ http://github.com/etorreborre/oscon-2010/tree/master/src/main/scala
+ http://github.com/etorreborre/oscon-2010/tree/master/src/test/scala
